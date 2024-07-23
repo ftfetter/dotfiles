@@ -1,0 +1,218 @@
+{
+  "height": 40,
+  "layer": "top",
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-bottom": 0,
+  "margin-right": 0,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    //"custom/weather",
+    "clock"
+    //"custom/notifications"
+  ],
+  "modules-right": [
+    "tray",
+    //"custom/checkupdate",
+    "temperature",
+    "memory",
+    "cpu",
+    "network",
+    "pulseaudio",
+    "pulseaudio#input",
+    "battery",
+    //"custom/powermenu"
+    "group/powermenu"
+  ],
+  "actions": {
+    "on-click-right": "mode",
+    "on-scroll-up": "shift_up",
+    "on-scroll-down": "shift_down"
+  },
+  "battery": {
+    "format": "{icon}",
+    "format-icons": [
+      "󰂎",
+      "󰁻",
+      "󰁽",
+      "󰁿",
+      "󰂁",
+      "󰁹"
+    ],
+    "interval": 10,
+    "states": {
+      "warning": 30,
+      "critical": 10
+    },
+    "format-discharging-critical": "󰂃",
+    "format-charging": "{icon}󱐋",
+    "format-full": "󱟢"
+  },
+  "clock": {
+    "format": "  {:%I:%M %p}",
+    "format-alt": "󰃭  {:%a %d %b %Y}",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "cpu": {
+    "format": "󰘚 {usage}%",
+    "tooltip": true
+  },
+  "hyprland/submap": {
+    "format": "✌️ {}",
+    "max-length": 8,
+    "tooltip": true
+  },
+  "hyprland/window": {
+    "format": "{title} {class}",
+    "rewrite": {
+      "(\\d\\. )?(.*) - Chromium chromium": "<span color=\"#4285F4\"> </span> $2",
+      "(.*) kitty": "<span color=\"#ffffff\">󰆍 </span> $1",
+      "nvim (.*) kitty": "<span color=\"#57A143\"> </span> $1",
+      "(.*) wofi": "<span color=\"#ffffff\">Applications</span> $1",
+      "(.*) Spotify": "<span color=\"#1db954\"> </span> $1"
+    },
+    "separate-outputs": true
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "󰲠",
+      "2": "󰲢",
+      "3": "󰲤",
+      "4": "󰲦",
+      "5": "󰲨",
+      "6": "󰲪",
+      "7": "󰲬",
+      "8": "󰲮",
+      "9": "󰲰",
+      "10": "󰿬",
+      "active": "",
+      "default": ""
+    }
+  },
+  "memory": {
+    "format": "󰍛 {percentage}%",
+    "tooltip": true
+  },
+  "network": {
+    "interval": 10,
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format-disconnected": "󰇧",
+    "format-ethernet": "󰈀",
+    "format-wifi": "{icon}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n {bandwidthDownBits}  {bandwidthUpBits}",
+    "tooltip-format-ethernet": "{ifname}"
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon} ",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "󰋋 ",
+      "headset": "󰋎 ",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "pavucontrol -t 3",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5",
+    "scroll-step": 5,
+    "tooltip-format": "{desc} {volume}%"
+  },
+  "pulseaudio#input": {
+    "format": "{format_source}",
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "on-click": "pavucontrol -t 4",
+    "on-scroll-up": "pamixer --default-source -i 5",
+    "on-scroll-down": "pamixer --default-source -d 5",
+    "scroll-step": 5,
+    "tooltip-format": "{desc} {volume}%"
+  },
+  "temperature": {
+    "critical-threshold": 70,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  },
+  "custom/powermenu": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "exec wlogout -p layer-shell"
+  },
+  "custom/updates": {
+    "format": "<span color=\"#61afef\"></span> {}",
+    "tooltip": false,
+    "interval": 3600,
+    "exec": "exec $HOME/.config/waybar/scripts/checkupdate.sh"
+  },
+  "custom/quit": {
+    "format": "󰗼",
+    "on-click": "hyprctl dispatch exit",
+    "tooltip": true,
+    "tooltip-format": "Logout"
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "on-click": "swaylock",
+    "tooltip": true,
+    "tooltip-format": "Lock screen"
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "on-click": "reboot",
+    "tooltip": true,
+    "tooltip-format": "Reboot"
+  },
+  "custom/power": {
+    "format": "",
+    "on-click": "shutdown now",
+    "tooltip": true,
+    "tooltip-format": "Turn off"
+  },
+  "group/powermenu": {
+    "drawer": {
+      "children-class": "not-power",
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/quit",
+      "custom/lock",
+      "custom/reboot"
+    ],
+    "orientation": "inherit"
+  }
+}

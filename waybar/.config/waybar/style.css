@@ -1,0 +1,164 @@
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  min-height: 0;
+  padding: 0;
+}
+
+#waybar {
+  background: #1e222a;
+  color: #eeeeef;
+}
+
+#clock,
+#cpu,
+#custom-lock,
+#custom-power,
+#custom-powermenu,
+#custom-quit,
+#custom-reboot,
+#custom-updates,
+#memory,
+#temperature,
+#window,
+#workspaces {
+  padding: 4px 8px;
+  background-color: #303643;
+  border-radius: 30px;
+  margin: 6px 4px;
+}
+
+#clock {
+  color: #eeeeef;
+}
+
+#cpu {
+  color: #61afef;
+}
+
+#custom-power {
+  color: #e06c75;
+  padding-right: 11px;
+  margin-right: 10px;
+}
+
+#custom-quit,
+#custom-lock,
+#custom-reboot {
+  border-radius: 0px;
+  color: #eeeeef;
+  margin: 6px 0px;
+  min-width: 25px;
+  padding: 4px 0px;
+}
+
+#custom-quit {
+  border-radius: 30px 0px 0px 30px;
+}
+
+#custom-powermenu {
+  color: #e06c75;
+  padding-right: 11px;
+  margin-right: 10px;
+}
+
+#custom-updates {
+  color: #1788e4;
+}
+
+#memory {
+  color: #e5c07b;
+}
+
+#temperature {
+  color: #98c379;
+}
+
+#window {
+  color: #929db1;
+  padding-right: 12px;
+}
+
+window#waybar.empty {
+  background-color: transparent;
+}
+
+#workspaces {
+  margin-left: 10px;
+}
+
+#workspaces button {
+  color: #eeeeef;
+  padding-right: 4px;
+}
+
+#workspaces button.active {
+  color: #fa5aa4;
+}
+
+#workspaces button.focused {
+  border-radius: 30px;
+}
+
+#workspaces button.urgent {
+  border-radius: 30px;
+}
+
+#workspaces button:hover {
+  border-radius: 30px;
+  color: #1e222a;
+}
+
+#battery,
+#bluetooth,
+#network,
+#pulseaudio,
+#pulseaudio.input {
+  background-color: #303643;
+  margin: 6px 0px;
+  min-width: 25px;
+  padding: 4px 0px;
+}
+
+#battery {
+  border-radius: 0px 30px 30px 0px;
+  margin-right: 4px;
+  padding-right: 3px;
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network {
+  border-radius: 30px 0px 0px 30px;
+  color: #c678dd;
+  margin-left: 4px;
+  padding-left: 3px;
+}
+
+#pulseaudio {
+  color: #0fb9b1;
+}
