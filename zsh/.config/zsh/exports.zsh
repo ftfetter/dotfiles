@@ -3,7 +3,7 @@
 # Defaults
 export EDITOR='nvim'
 export TERMINAL='kitty'
-export BROWSER='chromium'
+export BROWSER='firefox'
 export WORKSPACE=$HOME/Workspace/
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=100000
