@@ -1,0 +1,19 @@
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+
+# Settings dir
+export ZSH_CONFIG="$HOME/.config/zsh"
+
+# Import settings
+plug "$ZSH_CONFIG/aliases.zsh"
+plug "$ZSH_CONFIG/exports.zsh"
+
+# Import plugins
+plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-completions"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "zsh-users/zsh-history-substring-search"
+
+setopt appendhistory
+
+eval "$(starship init zsh)"
+
