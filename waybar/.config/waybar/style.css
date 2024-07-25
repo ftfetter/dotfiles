@@ -1,7 +1,9 @@
+@import "mocha.css";
+
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: @text;
+    color: @base;
   }
 }
 
@@ -17,8 +19,7 @@
 }
 
 #waybar {
-  background: #1e222a;
-  color: #eeeeef;
+  background: transparent;
 }
 
 #clock,
@@ -33,31 +34,31 @@
 #temperature,
 #window,
 #workspaces {
+  background-color: @base;
   padding: 4px 8px;
-  background-color: #303643;
   border-radius: 30px;
   margin: 6px 4px;
 }
 
 #clock {
-  color: #eeeeef;
+  color: @text;
 }
 
 #cpu {
-  color: #61afef;
+  color: @lavender;
 }
 
 #custom-power {
-  color: #e06c75;
-  padding-right: 11px;
+  color: @red;
+  padding-right: 12px;
   margin-right: 10px;
 }
 
 #custom-quit,
 #custom-lock,
 #custom-reboot {
+  color: @red;
   border-radius: 0px;
-  color: #eeeeef;
   margin: 6px 0px;
   min-width: 25px;
   padding: 4px 0px;
@@ -78,20 +79,16 @@
 }
 
 #memory {
-  color: #e5c07b;
+  color: @yellow;
 }
 
 #temperature {
-  color: #98c379;
+  color: @teal;
 }
 
 #window {
-  color: #929db1;
+  color: @flamingo;
   padding-right: 12px;
-}
-
-window#waybar.empty {
-  background-color: transparent;
 }
 
 #workspaces {
@@ -99,12 +96,13 @@ window#waybar.empty {
 }
 
 #workspaces button {
-  color: #eeeeef;
+  background-color: @base;
+  color: @text;
   padding-right: 4px;
 }
 
 #workspaces button.active {
-  color: #fa5aa4;
+  color: @red;
 }
 
 #workspaces button.focused {
@@ -125,7 +123,8 @@ window#waybar.empty {
 #network,
 #pulseaudio,
 #pulseaudio.input {
-  background-color: #303643;
+  background-color: @base;
+  color: @peach;
   margin: 6px 0px;
   min-width: 25px;
   padding: 4px 0px;
@@ -137,28 +136,24 @@ window#waybar.empty {
   padding-right: 3px;
 }
 
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+#battery.charging,
+#battery.plugged {
+  background-color: @green;
+  color: @base;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: @red;
+  color: @base;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #network {
   border-radius: 30px 0px 0px 30px;
-  color: #c678dd;
   margin-left: 4px;
   padding-left: 3px;
-}
-
-#pulseaudio {
-  color: #0fb9b1;
 }

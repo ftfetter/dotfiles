@@ -191,13 +191,13 @@
   },
   "custom/reboot": {
     "format": "󰜉",
-    "on-click": "reboot",
+    "on-click": "systemctl reboot",
     "tooltip": true,
     "tooltip-format": "Reboot"
   },
   "custom/power": {
     "format": "",
-    "on-click": "shutdown now",
+    "on-click": "systemctl poweroff",
     "tooltip": true,
     "tooltip-format": "Turn off"
   },
